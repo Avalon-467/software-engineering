@@ -1,0 +1,94 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>智能相册</title>  
+    <style>  
+        /* 简单的样式 */  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 20px;  
+        }  
+        .container {  
+            max-width: 300px;  
+            margin: 0 auto;  
+        }  
+        label, input[type="text"], input[type="password"] {  
+            display: block;  
+            width: 100%;  
+            margin-bottom: 10px;  
+        }  
+        button {  
+            display: block;  
+            width: 100%;  
+            padding: 10px;  
+            background-color: #333;  
+            color: #fff;  
+            border: none;  
+            cursor: pointer;  
+        }  
+        #image-container {  
+            display: none;  
+            text-align: center;  
+            margin-top: 20px;  
+        }  
+        #image-container img {  
+            max-width: 100%;  
+            height: auto;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div id="login-container">  
+        <h1>登录</h1>  
+        <form id="loginForm">  
+            <label for="username">用户名:</label>  
+            <input type="text" id="username" name="username" required>  
+  
+            <label for="password">密码:</label>  
+            <input type="password" id="password" name="password" required>  
+  
+            <button type="button" onclick="login()">登录</button>  
+        </form>  
+    </div>  
+    
+    <div id="content-container" style="display: none;"> 
+    <h1>登录成功</h1>    
+        <h2>图片上传</h2>  
+        <input type="file" id="imageUpload" accept="image/*">  
+        <button type="button" onclick="uploadImage()">上传</button>   
+
+        <h2>智能搜索图片</h2>  
+        <input type="text" id="imageSearch" placeholder="搜索图片...">  
+        <button type="button" onclick="searchImage()">搜索</button>  
+    </div>  
+<script>  
+        function login() {  
+            // 这里应该是验证用户名和密码的逻辑，但出于简化，我们仅模拟成功登录  
+            const username = document.getElementById('username').value;  
+            const password = document.getElementById('password').value;  
+      
+            // 假设用户名是"admin"，密码是"password"  
+            if (username === 'admin' && password === 'password') {  
+                document.getElementById('login-container').style.display = 'none';  
+                document.getElementById('content-container').style.display = 'block';  
+            } else {  
+                alert('用户名或密码错误！');  
+            }  
+        }  
+      
+        function uploadImage() {  
+            // 这里应该是图片上传的逻辑，但出于简化，我们仅展示一个警告  
+            alert('图片上传功能尚未实现！');  
+        }  
+      
+        function search() {  
+            // 这里应该是智能搜索的逻辑，但出于简化，我们仅展示一个警告  
+            const searchTerm = document.getElementById('smart-search').value;  
+            alert('正在搜索图片: ' + searchTerm);  
+        }  
+    </script>   
+</body>  
+</html>
